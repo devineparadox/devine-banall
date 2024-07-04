@@ -1,1 +1,1 @@
-worker: python Devine.py
+worker: python devine.py
