@@ -1,22 +1,26 @@
-from os import getenv
+import os
 import logging
 from pyrogram import Client, filters, idle
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import ChatAdminRequired
-from config import API_HASH, API_ID, BOT_TOKEN, OWNER_ID, START_IMG, UPDATE_CHANNEL, SOURCE, MUSIC, BOT_NAME, BOT_USERNAME
 
+# Configure logging
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-# pyrogram client
+# Pyrogram client setup
+bot_token = os.getenv('BOT_TOKEN')
+api_id = int(os.getenv('API_ID'))
+api_hash = os.getenv('API_HASH')
+
 devine = Client(
     "banall",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN,
+    api_id=api_id,
+    api_hash=api_hash,
+    bot_token=bot_token,
 )
 
 @devine.on_message(filters.command("start") & filters.private)
@@ -37,15 +41,15 @@ async def start_command(client, message: Message):
             ]
         )
     )
-
+    
 @devine.on_message(filters.command("banall") & filters.group)
 async def banall_command(client, message: Message):
     print("ɢᴇᴛᴛɪɴɢ ᴍᴇᴍʙᴇʀs ғʀᴏᴍ {}".format(message.chat.id))
     banned_count = 0
     
-    async for member in devine.get_chat_members(message.chat.id):
+    async for member in devine.iter_chat_members(message.chat.id):
         try:
-            await devine.ban_chat_member(chat_id=message.chat.id, user_id=member.user.id)
+            await devine.kick_chat_member(chat_id=message.chat.id, user_id=member.user.id)
             banned_count += 1
             print("ʙᴀɴɴᴇᴅ {} ғʀᴏᴍ {}".format(member.user.id, message.chat.id))
             await message.reply_text(f"<b>‣ {member.user.mention} ʜᴀs ʙᴇᴇɴ ʙᴀɴɴᴇᴅ.</b>")
@@ -55,7 +59,6 @@ async def banall_command(client, message: Message):
     print(f"ᴘʀᴏᴄᴇss ᴄᴏᴍᴘʟᴇᴛᴇᴅ, ᴛᴏᴛᴀʟ {banned_count} ʙᴇᴇɴ ʙᴀɴɴᴇᴅ.")
     await message.reply_text(f"<b>‣ ᴛᴏᴛᴀʟ {banned_count} ᴍᴇᴍʙᴇʀs ʙᴀɴɴᴇᴅ.</b>")
 
-# start bot client
-devine.start()
-print("ᴅᴇᴠɪɴᴇ ʙᴀɴᴀʟʟ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
-idle()
+# Start bot
+if __name__ == "__main__":
+    devine.run()
