@@ -3,7 +3,7 @@ import logging
 from pyrogram import Client, filters, idle
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import ChatAdminRequired
-from config import API_HASH, API_ID, BOT_TOKEN, OWNER_ID, START_IMG, UPDATE_URL, SOURCE_URL, MUSIC_BOT_URL
+from config import API_HASH, API_ID, BOT_TOKEN, OWNER_ID, START_IMG, UPDATE_CHANNEL, SOURCE, MUSIC
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -31,7 +31,7 @@ async def start_command(client, message: Message):
                     InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇ", url=UPDATE_CHANNEL)
                 ],
                 [
-                    InlineKeyboardButton("ᴍᴜsɪᴄ", url=MUSIC_BOT),
+                    InlineKeyboardButton("ᴍᴜsɪᴄ", url=MUSIC),
                     InlineKeyboardButton("sᴏᴜʀᴄᴇ", url=SOURCE)
                 ]
             ]
