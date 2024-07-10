@@ -1,12 +1,11 @@
-import os
 
-OWNER_ID = int(os.getenv('OWNER_ID', ''))
-API_ID = int(os.getenv('API_ID', ''))
-API_HASH = os.getenv('API_HASH', '')
+OWNER_ID = 6440363814
+API_ID = 29230755
+API_HASH = "ab41c7247a91680d2d0dc705ad7158da"
 
-BOT_TOKEN = os.getenv('BOT_TOKEN', '')
-BOT_NAME = os.getenv('BOT_NAME', '')
-BOT_USERNAME = os.getenv('BOT_USERNAME', '')
+BOT_TOKEN = "7290224551:AAGROA8Jv8amXKfOzJUxwsXGfAGXYVt_z1Q"
+BOT_NAME = "Ꭰᴇᴠɪɴᴇ Ᏼᴀɴᴀʟʟ"
+BOT_USERNAME = "DevineBanall_bot"
 
 START_IMG = "https://telegra.ph//file/a166560a9c505a1fbe92e.jpg"
 MUSIC = "https://t.me/devineXmusic_bot"
