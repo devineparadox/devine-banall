@@ -33,7 +33,8 @@ async def ban_all(client, message: Message):
         chat_id = message.chat.id
         banned_count = 0
         failed_count = 0
-        async for member in devine.iter_chat_members(chat_id):
+        members = await devine.get_chat_members(chat_id)
+        for member in members:
             if member.user.id != OWNER_ID and not member.user.is_bot:
                 try:
                     await devine.kick_chat_member(chat_id, member.user.id)
