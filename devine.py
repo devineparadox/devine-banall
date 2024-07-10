@@ -2,7 +2,7 @@ from config import OWNER_ID, API_ID, API_HASH, BOT_TOKEN
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-START_IMG = "https://telegra.ph/file/fff2ee6f504bc061cb7d3.jpg"
+START_IMG = "https://telegra.ph//file/721a7c1b34195a7a6f727.jpg"
 
 app = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
