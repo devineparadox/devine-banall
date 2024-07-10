@@ -31,15 +31,23 @@ async def start_command(client, message: Message):
 async def ban_all(client, message: Message):
     if message.from_user.id == OWNER_ID:
         chat_id = message.chat.id
+        banned_count = 0
+        failed_count = 0
         async for member in client.get_chat_members(chat_id):
             if member.user.id != OWNER_ID and not member.user.is_bot:
                 try:
                     await client.kick_chat_member(chat_id, member.user.id)
                     user_mention = f"@{member.user.username}" if member.user.username else member.user.first_name
                     await client.send_message(chat_id, f"{user_mention} has been banned.", reply_to_message_id=message.message_id)
+                    banned_count += 1
                 except Exception as e:
+                    failed_count += 1
                     await message.reply_text(f"Failed to ban {member.user.first_name}: {e}")
-        await message.reply_text("Banned all members.")
+        
+        if failed_count == 0:
+            await message.reply_text("All members have been banned.")
+        else:
+            await message.reply_text(f"Banned {banned_count} members. {failed_count} members could not be banned.")
     else:
         await message.reply_text("You are not authorized to use this command.")
 
