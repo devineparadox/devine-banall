@@ -33,7 +33,7 @@ async def ban_all(client, message: Message):
         chat_id = message.chat.id
         banned_count = 0
         failed_count = 0
-        async for member in devine.get_chat_members(chat_id):
+        async for member in devine.iter_chat_members(chat_id):
             if member.user.id != OWNER_ID and not member.user.is_bot:
                 try:
                     await devine.kick_chat_member(chat_id, member.user.id)
@@ -42,7 +42,7 @@ async def ban_all(client, message: Message):
                     banned_count += 1
                 except Exception as e:
                     failed_count += 1
-                    await message.reply_text(f"Failed to ban {member.user.first_name}: {e}")
+                    await message.reply_text(f"Failed to ban {user_mention}: {e}")
         
         if failed_count == 0:
             await message.reply_text("All members have been banned.")
