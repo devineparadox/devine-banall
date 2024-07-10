@@ -1,5 +1,3 @@
-
-
 # Get this value from my.telegram.org/apps
 API_ID = 29230755
 API_HASH = ""
