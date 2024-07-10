@@ -15,5 +15,5 @@ BOT_USERNAME = "DevineBanall_bot"
 # Optional 
 START_IMG = "https://telegra.ph//file/a166560a9c505a1fbe92e.jpg"
 MUSIC = "https://t.me/devineXmusic_bot"
-SOURCE = "https://github.com/devineparadox/Devine-Banall"
+SOURCE = "https://github.com/devineparadox/devine-banall"
 UPDATE_CHANNEL = "https://t.me/Devine_Network"
