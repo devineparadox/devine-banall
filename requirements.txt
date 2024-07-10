@@ -1,3 +1,4 @@
 pyrogram
 pyTelegramBotAPI
 aiogram
+tgcrypto
