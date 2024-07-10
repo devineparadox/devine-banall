@@ -3,7 +3,7 @@ import logging
 from pyrogram import Client, filters, idle
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import ChatAdminRequired
-
+from config import UPDATE_CHANNEL, SOURCE, MUSIC, START_IMG
 # Configure logging
 logging.basicConfig(
     level=logging.DEBUG,
