@@ -1,6 +1,6 @@
 # Ꭰᴇᴠɪɴᴇ Ᏼᴀɴᴀʟʟ
 
-![Devine Banall Logo](https://telegra.ph//file/811e905e122befab95032.jpg)
+![Devine Banall Logo](https://telegra.ph//file/e45175489f16c43a28e34.jpg)
 
 ᴀ ᴘʏʀᴏɢʀᴀᴍ-ʙᴀsᴇᴅ ʙᴏᴛ ᴘʀᴏɢʀᴀᴍᴍᴇᴅ ᴛᴏ ʙᴀɴ ᴏʀ ᴡɪᴘᴇ ᴏᴜᴛ ᴀʟʟ ᴍᴇᴍʙᴇʀs ғʀᴏᴍ ᴀ ɢʀᴏᴜᴘ ɪɴ ᴊᴜsᴛ ᴀ ғᴇᴡ sᴇᴄᴏɴᴅs
 ## Why Devine Banall?
