@@ -3,18 +3,12 @@ import logging
 from pyrogram import Client, filters, idle
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import ChatAdminRequired
-
+from config import API_HASH, API_ID, BOT_TOKEN, OWNER_ID
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
-# config vars
-API_ID = int(getenv("API_ID"))
-API_HASH = getenv("API_HASH")
-BOT_TOKEN = getenv("BOT_TOKEN")
-OWNER = getenv("OWNER")
 
 # pyrogram client
 app = Client(
@@ -32,7 +26,7 @@ async def start_command(client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("ᴏᴡɴᴇʀ", url=f"https://t.me/{OWNER}")
+                    InlineKeyboardButton("ᴏᴡɴᴇʀ", url=f"https://t.me/{OWNER_ID}")
                 ],
                 [
                     InlineKeyboardButton("Update Channel", url="https://t.me/devine_network"),
