@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import OWNER_ID, API_ID, API_HASH, BOT_TOKEN
 
-app = Client("sudo_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+app = Client("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 SUDOERS = set()
 
 async def extract_user(message: Message):
