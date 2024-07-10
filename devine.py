@@ -23,7 +23,7 @@ devine = Client(
 async def start_command(client, message: Message):
     await message.reply_photo(
         photo=START_IMG,
-        caption=f"ʏᴏᴏ {message.from_user.mention} ✨\n\nɪ'ᴍ {devine.mention}\n\nᴀ ᴘʏʀᴏɢʀᴀᴍ-ʙᴀsᴇᴅ ʙᴏᴛ ᴘʀᴏɢʀᴀᴍᴍᴇᴅ ᴛᴏ ʙᴀɴ ᴏʀ ᴡɪᴘᴇ ᴏᴜᴛ ᴀʟʟ ᴍᴇᴍʙᴇʀs ғʀᴏᴍ ᴀ ɢʀᴏᴜᴘ ɪɴ ᴊᴜsᴛ ᴀ ғᴇᴡ sᴇᴄᴏɴᴅs.\n──────────────────\nɢʀᴀɴᴛ ᴍᴇ ᴜɴʀᴇsᴛʀɪᴄᴛᴇᴅ ᴀᴄᴄᴇss ᴛᴏ ᴛᴇsᴛ ᴍʏ ᴄᴀᴘᴀʙɪʟɪᴛɪᴇs.\n\nᴇᴀɢᴇʀ ᴛᴏ sᴇᴇ ᴡʜᴀᴛ I ᴄᴀɴ ᴅᴏ? ᴛʏᴘᴇ /banall ᴀɴᴅ ᴏʙsᴇʀᴠᴇ ᴛʜᴇ ɢʀᴏᴜᴘ ᴛʀᴀɴsғᴏʀᴍᴀᴛɪᴏɴ.",
+        caption=f"ʏᴏᴏ {message.from_user.mention} ✨\n\nɪ'ᴍ {devine.mention}\n\nᴀ ᴘʏʀᴏɢʀᴀᴍ-ʙᴀsᴇᴅ ʙᴏᴛ ᴘʀᴏɢʀᴀᴍᴍᴇᴅ ᴛᴏ ʙᴀɴ ᴏʀ ᴡɪᴘᴇ ᴏᴜᴛ ᴀʟʟ ᴍᴇᴍʙᴇʀs ғʀᴏᴍ ᴀ ɢʀᴏᴜᴘ ɪɴ ᴊᴜsᴛ ᴀ ғᴇᴡ sᴇᴄᴏɴᴅs.\n──────────────────\nɢʀᴀɴᴛ ᴍᴇ ᴜɴʀᴇsᴛʀɪᴄᴛᴇᴅ ᴀᴄᴄᴇss ᴛᴏ ᴛᴇsᴛ ᴍʏ ᴄᴀᴘᴀʙɪʟɪᴛɪᴇs.",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
