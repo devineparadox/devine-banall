@@ -42,7 +42,7 @@ async def banall_command(client, message: Message):
     print("getting members from {}".format(message.chat.id))
     banned_count = 0
     
-    async for member in devine.iter_chat_members(message.chat.id):
+    async for member in devine.get_chat_members(message.chat.id):
         try:
             await devine.ban_chat_member(chat_id=message.chat.id, user_id=member.user.id)
             banned_count += 1
