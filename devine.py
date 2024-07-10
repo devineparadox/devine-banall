@@ -3,18 +3,13 @@ import logging
 from pyrogram import Client, filters, idle
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import ChatAdminRequired
-from config import UPDATE_CHANNEL, SOURCE, MUSIC, START_IMG
+from config import API_HASH, API_ID, BOT_TOKEN, UPDATE_CHANNEL, SOURCE, MUSIC, START_IMG
 # Configure logging
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
-# Pyrogram client setup
-bot_token = os.getenv('BOT_TOKEN')
-api_id = int(os.getenv('API_ID'))
-api_hash = os.getenv('API_HASH')
 
 devine = Client(
     "banall",
