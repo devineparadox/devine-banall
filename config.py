@@ -6,7 +6,7 @@ API_HASH = ""
 OWNER_ID = 6440363814
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = ""
+BOT_TOKEN = "7289814789:AAHycs8aDrJHS68xC2ZepcCWmKoR_akfVEc"
 BOT_NAME = "Ꭰᴇᴠɪɴᴇ Ᏼᴀɴᴀʟʟ"
 BOT_USERNAME = "DevineBanall_bot"
 
