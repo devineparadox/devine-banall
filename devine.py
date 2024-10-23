@@ -6,7 +6,6 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from config import API_HASH, API_ID, BOT_TOKEN, UPDATE_CHANNEL, SOURCE, MUSIC, START_IMG, OWNER_ID
 
-# Configure logging
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -22,17 +21,20 @@ devine = Client(
 
 @devine.on_message(filters.command("start") & filters.private)
 async def start_command(client, message: Message):
-    await message.reply_photo(
-        photo=START_IMG,
-        caption=f"ʏᴏᴏ {message.from_user.mention} ✨\n\nɪ'ᴍ [Ꭰᴇᴠɪɴᴇ Ᏼᴀɴᴀʟʟ](https://t.me/DevineBanall_bot)\n\nᴀ ᴘʏʀᴏɢʀᴀᴍ-ʙᴀsᴇᴅ ʙᴏᴛ ᴘʀᴏɢʀᴀᴍᴍᴇᴅ ᴛᴏ ʙᴀɴ ᴏʀ ᴡɪᴘᴇ ᴏᴜᴛ ᴀʟʟ ᴍᴇᴍʙᴇʀs ғʀᴏᴍ ᴀ ɢʀᴏᴜᴘ ɪɴ ᴊᴜsᴛ ᴀ ғᴇᴡ sᴇᴄᴏɴᴅs.\n──────────────────\nɢʀᴀɴᴛ ᴍᴇ ᴜɴʀᴇsᴛʀɪᴄᴛᴇᴅ ᴀᴄᴄᴇss ᴛᴏ ᴛᴇsᴛ ᴍʏ ᴄᴀᴘᴀʙɪʟɪᴛɪᴇs.",
+    for i in range(4):
+        temp_message = await message.reply_text("Ꮮᴏᴀᴅɪɴɢ" + "." * i)
+        await asyncio.sleep(0.5)  
+        await temp_message.delete()
+
+    await message.reply_text(
+        caption=f"ʏᴏᴏ {message.from_user.mention} ✨\n\nɪ'ᴍ [Ꭰᴇᴠɪɴᴇ Ᏼᴀɴᴀʟʟ](https://files.catbox.moe/r7r96s.jpg)\n\nᴀ ᴘʏʀᴏɡʀᴀᴍ-ʙᴀsᴇᴅ ʙᴏᴛ ᴘʀᴏɢʀᴀᴍᴍᴇᴅ ᴛᴏ ʙᴀɴ ᴏʀ ᴡɪᴘᴇ ᴏᴜᴛ ᴀʟʟ ᴍᴇᴍʙᴇʀs ғʀᴏᴍ ᴀ ɢʀᴏᴜᴘ ɪɴ ᴊᴜsᴛ ᴀ ғᴇᴡ sᴇᴄᴏɴᴅs.\n──────────────────\nɢʀᴀɴᴛ ᴍᴇ ᴜɴʀᴇsᴛʀɪᴄᴛᴇᴅ ᴀᴄᴄᴇss ᴛᴏ ᴛᴇsᴛ ᴍʏ ᴄᴀᴘᴀʙɪʟɪᴇs.",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("ᴄʀᴇᴀᴛᴏʀ", url=f"tg://openmessage?user_id={OWNER_ID}"),
-                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇ", url=UPDATE_CHANNEL)
+                    InlineKeyboardButton("ᴄʀᴇᴀᴛᴏʀ", user_id=OWNER_ID)
                 ],
                 [
-                    InlineKeyboardButton("ᴍᴜsɪᴄ", url=MUSIC),
+                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇ", url=UPDATE_CHANNEL),
                     InlineKeyboardButton("sᴏᴜʀᴄᴇ", url=SOURCE)
                 ]
             ]
@@ -49,7 +51,6 @@ async def banall_command(client, message: Message):
             await devine.ban_chat_member(chat_id=message.chat.id, user_id=member.user.id)
             banned_count += 1
             print("ʙᴀɴɴᴇᴅ {} ғʀᴏᴍ {}".format(member.user.id, message.chat.id))
-            await message.reply_text(f"<b>‣ {member.user.mention} ʜᴀs ʙᴇᴇɴ ʙᴀɴɴᴇᴅ.</b>")
         except ChatAdminRequired:
             print(f"ʙᴏᴛ ᴅᴏᴇs ɴᴏᴛ ʜᴀᴠᴇ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ɪɴ {message.chat.id}")
             await message.reply_text("<b>‣ ɪ ɴᴇᴇᴅ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ᴛᴏ ʙᴀɴ ᴍᴇᴍʙᴇʀs.</b>")
@@ -63,6 +64,5 @@ async def banall_command(client, message: Message):
     print(f"ᴘʀᴏᴄᴇss ᴄᴏᴍᴘʟᴇᴛᴇᴅ, ᴛᴏᴛᴀʟ {banned_count} ʙᴇᴇɴ ʙᴀɴɴᴇᴅ.")
     await message.reply_text(f"<b>‣ ᴛᴏᴛᴀʟ {banned_count} ᴍᴇᴍʙᴇʀs ʙᴀɴɴᴇᴅ.</b>")
 
-# Start bot
 if __name__ == "__main__":
     devine.run()
