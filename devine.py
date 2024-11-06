@@ -19,6 +19,11 @@ devine = Client(
     bot_token=BOT_TOKEN,
 )
 
+
+async def is_on_off(status_code):
+    return status_code == 2
+    
+
 @devine.on_message(filters.command("start") & filters.private)
 async def start_command(client, message: Message):
     for i in range(4):
