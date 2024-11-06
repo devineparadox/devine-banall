@@ -4,7 +4,8 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import ChatAdminRequired, FloodWait
-from config import API_HASH, API_ID, BOT_TOKEN, UPDATE_CHANNEL, SOURCE, OWNER_ID
+from config import API_HASH, API_ID, BOT_TOKEN, UPDATE_CHANNEL, SOURCE, START_IMG, OWNER_ID, LOG_CHANNEL_ID, MUSIC_ID
+from datetime import timedelta
 
 logging.basicConfig(
     level=logging.DEBUG,
